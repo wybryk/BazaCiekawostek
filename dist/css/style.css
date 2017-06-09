@@ -1,0 +1,163 @@
+@charset "UTF-8";
+body {
+  font-family: Lato, Arial, sans-serif; }
+
+h1.title, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: Lato, Arial, sans-serif; }
+
+button, .button {
+  font-family: Lato, Arial, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #222; }
+
+body {
+  border-top: 4px solid #111; }
+
+  #nav-toggle-box {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px; }
+
+  #nav-toggle {
+    margin-left: auto;
+    color: #000;
+    text-decoration: none;
+    padding: 2px 8px; }
+
+  #nav-toggle-brand {
+    position: relative;
+    top: -1px; }
+
+  #nav-toggle-brand a,
+  #nav-toggle-brand span {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none; }
+
+  #top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 0 36px;
+    height: 56px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+    #top #top-brand {
+      margin-right: 36px;
+      font-size: 24px;}
+      #top #top-brand span,
+      #top #top-brand a {
+        text-indent: -9999px;
+        width: 70px;
+        line-height: 11px;
+        color: rgba(0, 0, 0, 0.8);
+        text-decoration: none;
+      }
+    #top ul {
+      display: flex;
+      align-items: center;
+      margin: 0; }
+    #top nav li {
+      font-size: 16px; }
+    #top nav span,
+    #top nav a {
+      display: inline-block; }
+    #top nav a {
+      color: rgba(0, 0, 0, 0.8);
+      text-decoration: none; }
+      #top #top-brand a:hover ,
+      #top nav a:hover {
+        -moz-transition: all linear 0.2s;
+        transition: all linear 0.2s;
+        color: rgba(0, 0, 0, 0.6);
+        text-decoration: underline; }
+    #top nav b a,
+    #top nav span {
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.4); }
+    #top nav b a {
+      text-decoration: underline; }
+      #top nav b a:hover {
+        color: #000; }
+    #top #top-nav-main {
+      padding-left: 36px;
+      border-left: 1px solid rgba(0, 0, 0, 0.15);}
+      #top #top-nav-main li {
+        margin-right: 28px; }
+    #top #top-nav-extra {
+      margin-left: auto;
+      width: 380px; }
+      #top #top-nav-extra ul{
+        float: right;
+      }
+      #top #top-nav-extra li {
+        margin-left: 28px;}
+      #top #top-nav-extra li:last-child {
+        font-size: 14px; }
+        #top #top-nav-extra li:last-child span,
+        #top #top-nav-extra li:last-child a {
+          color: rgba(0, 0, 0, 0.7);
+          display: inline-block;
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          text-decoration: none;
+          line-height: 28px;
+          border-radius: 4px;
+          padding: 0 16px; }
+        #top #top-nav-extra li:last-child a:hover {
+          -moz-transition: all linear 0.2s;
+          transition: all linear 0.2s;
+          color: #000;
+          text-decoration: underline; }
+        #top #top-nav-extra li:last-child span {
+          color: rgba(0, 0, 0, 0.4);
+          border-color: rgba(0, 0, 0, 0.2); }
+    #main {
+        margin: auto;
+        max-width: 1000px; }
+    #main #registration{
+      font-size: 32px;
+      text-align: center;
+    }
+    #main #search-box {
+        padding: 20px;
+        background: #ebf0f6;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    #main #search-box #search-docs{
+        width: 88%;
+        float: left;
+        margin-right: 20px;
+    }
+    #main #search-box .buton{
+        clear: both;
+    }
+    #main #results{
+        background: #ebf0f6;
+        text-align: center;
+        min-height: 400px;
+        padding: 24px;
+    }
+    #main #results p {
+      max-width: 220px;
+      margin: auto;
+      font-size: 13px;
+      line-height: 20px;
+      color: rgba(0, 0, 0, 0.5); }
+    #main #results #docs-search-results p {
+      max-width: none;
+      margin-bottom: 16px; }
+    #hero{
+      margin: auto;
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    #form-logIn{
+      margin: auto;
+      width: 400px;
+      height: 346px;
+    }
+    .error{
+      margin-bottom: 10px;
+    }
