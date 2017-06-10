@@ -1,6 +1,7 @@
 <?php
   session_start();
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,10 +38,29 @@
 	</div>
   <div id="main">
     <div id="search-box">
-      <input type="text" id="search-docs" name="q" data-component="livesearch" data-append-forms="#search-form" data-min="1" data-target="#docs-search-results" data-url="/ajax/redactor/docs/search/" placeholder="Search" />
-      <button type="submit" class="buton" onclick="getValue()">Szukaj</button>
+      <form action="selectCiekawostka.php" method="post" id="name-form">
+        <input type="text" id="search-docs" name="name" />
+        <button type="submit" class="buton" >Szukaj</button>
+      </form>
+      <form action="randomRecord.php" method="post" id="random-form">
+        <button type="submit" class="buton" >Losowe</button>
+      </form>
+      <form style="clear: both"></form>
     </div>
     <div id="results">
+      <table>
+        <tbody>
+        <?php
+        if(isset($_SESSION['exist']) && $_SESSION['exist'] == true){
+          $tab_dane = $_SESSION['dane'];
+          for($i=0; $i<$_SESSION['size']; $i++)
+            echo "<tr><td><b>{$tab_dane[$i][0]}</b></td></tr><tr><td>{$tab_dane[$i][1]}</td></tr>\n";
+          unset($_SESSION['dane']);
+          $_SESSION['exist'] = false;
+        }
+        ?>
+        </tbody>
+      </table>
     </div>
   </div>
 </body>

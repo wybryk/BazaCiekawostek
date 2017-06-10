@@ -119,13 +119,23 @@ body {
       text-align: center;
     }
     #main #search-box {
-        padding: 20px;
+        padding: 10px;
         background: #ebf0f6;
         margin-top: 24px;
         margin-bottom: 24px;
     }
+    #main #search-box #name-form{
+      margin-top: 20px;
+      float: left;
+      width: 90%;
+    }
+    #main #search-box #random-form{
+      margin-top: 20px;
+      float: left;
+      width: auto;
+    }
     #main #search-box #search-docs{
-        width: 88%;
+        width: 85%;
         float: left;
         margin-right: 20px;
     }
@@ -157,6 +167,10 @@ body {
       margin: auto;
       width: 400px;
       height: 346px;
+    }
+    table{
+      font-size: 25px;
+      text-align: left;
     }
     .error{
       margin-bottom: 10px;
