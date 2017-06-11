@@ -14,6 +14,8 @@
         if($row > 0){
           $random_value = rand(1, $row);
           $_SESSION['random_value'] = $random_value;
+          $polaczenie->query("SET NAMES 'utf8' COLLATE 'utf8_polish_ci'");
+          $polaczenie->query("SET CHARSET utf8");
           $result = $polaczenie->query("SELECT nazwa, opis FROM ciekawostka WHERE id = $random_value");
           if(!$result)
             throw new Exception($polaczenie->error);

@@ -9,6 +9,8 @@ if(isset($_POST['name'])){
     if($polaczenie->connect_errno != 0)
       throw new Exception(mysqli_connect_errno());
     else{
+        $polaczenie->query("SET NAMES 'utf8' COLLATE 'utf8_polish_ci'");
+        $polaczenie->query("SET CHARSET utf8");
         $result = $polaczenie->query("SELECT nazwa, opis FROM ciekawostka WHERE nazwa = '$name'");
         if(!$result)
           throw new Exception($polaczenie->error);

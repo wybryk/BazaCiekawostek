@@ -24,8 +24,8 @@
           <ul>
             <?php
               if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true){
-                echo '<li><a href="#">Moje konto</a></li>';
-                echo '<li><a href="#">Moje ciekawostki</a></li>';
+                echo '<li><a href="usrView.php">Moje konto</a></li>';
+                echo '<li><a href="usrurio.php">Moje ciekawostki</a></li>';
                 echo '<li><a href="logOut.php">Wyloguj</a></li>';
               }
               else{

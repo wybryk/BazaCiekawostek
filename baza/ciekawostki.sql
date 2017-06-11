@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 09 Cze 2017, 18:06
+-- Czas generowania: 11 Cze 2017, 19:12
 -- Wersja serwera: 10.1.21-MariaDB
 -- Wersja PHP: 5.6.30
 
@@ -34,6 +34,16 @@ CREATE TABLE `ciekawostka` (
   `id_konta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
+--
+-- Zrzut danych tabeli `ciekawostka`
+--
+
+INSERT INTO `ciekawostka` (`id`, `nazwa`, `opis`, `id_kategori`, `id_konta`) VALUES
+(1, 'oczy', 'Ludzkie oczy nie zmieniają swojego rozmiaru od urodzenia', 1, 1),
+(2, 'żebra', 'W trakcie oddychania żebra poruszają się rocznie pięć miliardów razy', 1, 2),
+(3, 'wypadek', '6 na 10 wypadków spowodowana jest przez wadliwy układ hamulcowy', 2, 3),
+(4, 'żebra', 'drtdcykvbiluby vhgvkj nhnl;kj ', 1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +54,14 @@ CREATE TABLE `kategoria` (
   `id` int(11) NOT NULL,
   `nazwa` text COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `kategoria`
+--
+
+INSERT INTO `kategoria` (`id`, `nazwa`) VALUES
+(1, 'człowiek'),
+(2, 'motoryzacja');
 
 -- --------------------------------------------------------
 
@@ -62,10 +80,11 @@ CREATE TABLE `konto` (
 --
 
 INSERT INTO `konto` (`id`, `login`, `haslo`) VALUES
-(1, 'klient', '$2y$10$0Zbtg6bLgsuOM3AoMsNZNepb2ef9.h6TDh7.UccEzsEr4jS1O6RrS'),
+(1, 'klient', '$2y$10$Mh7J2Mf1/37l/e.grx0cwux7Nq0OBtfcLQjx8lyrhoKgtBChWKsDi'),
 (2, 'mateusz', '$2y$10$SoWXBdZ4uxsZzyH1xszPKORwcZytPXT24qHjHyDN7H1qr8Vb3hMfm'),
 (3, 'megane', '$2y$10$xMSQo4IywBuu5kE011.FfuM4EC5t6MOFWJmOe95t/aD.UfBosDk3G'),
-(4, 'ciastko', '$2y$10$zHLiCu9jbU00bU4qRaBkCuJQjmOFGMsaKfT7TC8RIBeLvK065xlrS');
+(4, 'ciastko', '$2y$10$zHLiCu9jbU00bU4qRaBkCuJQjmOFGMsaKfT7TC8RIBeLvK065xlrS'),
+(5, 'admin123', '$2y$10$RLUv9ZcXRQH5oTT7CfWCROrsOZ2/TUwipfzhLaYIGNTz5NdP./Hxm');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -99,17 +118,17 @@ ALTER TABLE `konto`
 -- AUTO_INCREMENT dla tabeli `ciekawostka`
 --
 ALTER TABLE `ciekawostka`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT dla tabeli `kategoria`
 --
 ALTER TABLE `kategoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT dla tabeli `konto`
 --
 ALTER TABLE `konto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Ograniczenia dla zrzutów tabel
 --
