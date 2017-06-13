@@ -26,8 +26,7 @@
     	</div>
         <nav id="top-nav-main">
           <ul>
-      			<li><a href="#">Dodaj</a></li>
-      			<li><a href="#">Usuń</a></li>
+      			<li><a href="addCurio.php">Dodaj</a></li>
           </ul>
         </nav>
         <nav id="top-nav-extra">

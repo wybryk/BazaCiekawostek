@@ -30,7 +30,7 @@
         </nav>
 	  </div>
     <div id="main">
-      <div id="registration">
+      <div id="info">
       <?php
         if(isset($_SESSION['registration'])){
           echo $_SESSION['registration'];

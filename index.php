@@ -20,12 +20,20 @@
     <div id="top-brand">
     	<a href="index.php">Ciekawostki</a>
     	</div>
+      <nav id="top-nav-main">
+        <ul>
+          <?php
+            if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true)
+              echo "<li><a href='addCurio.php'>Dodaj</a></li>";
+          ?>
+        </ul>
+      </nav>
       <nav id="top-nav-extra">
           <ul>
             <?php
               if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true){
                 echo '<li><a href="usrView.php">Moje konto</a></li>';
-                echo '<li><a href="usrurio.php">Moje ciekawostki</a></li>';
+                echo '<li><a href="usrCurio.php">Moje ciekawostki</a></li>';
                 echo '<li><a href="logOut.php">Wyloguj</a></li>';
               }
               else{
@@ -38,7 +46,7 @@
 	</div>
   <div id="main">
     <div id="search-box">
-      <form action="selectCiekawostka.php" method="post" id="name-form">
+      <form action="selectCurio.php" method="post" id="name-form">
         <input type="text" id="search-docs" name="name" />
         <button type="submit" class="buton" >Szukaj</button>
       </form>

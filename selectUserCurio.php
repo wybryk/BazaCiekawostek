@@ -1,5 +1,5 @@
 <?php
-  session_start();
+session_start();
 $_SESSION['exist'] = false;
 if(isset($_POST['name'])){
   $name = $_POST['name'];
@@ -11,7 +11,8 @@ if(isset($_POST['name'])){
     else{
         $polaczenie->query("SET NAMES 'utf8' COLLATE 'utf8_polish_ci'");
         $polaczenie->query("SET CHARSET utf8");
-        $result = $polaczenie->query("SELECT nazwa, opis FROM ciekawostka WHERE nazwa = '$name'");
+        $id = $_SESSION['id'];
+        $result = $polaczenie->query("SELECT id, nazwa, opis FROM ciekawostka WHERE nazwa = '$name' AND id_konta = $id");
         if(!$result)
           throw new Exception($polaczenie->error);
           $row = $result->num_rows;
@@ -24,7 +25,6 @@ if(isset($_POST['name'])){
           $_SESSION['dane'] = $tab;
           $_SESSION['size'] = $row;
           $_SESSION['exist'] = true;
-          header('Location: index.php');
         }
       $polaczenie->close();
     }
@@ -32,5 +32,5 @@ if(isset($_POST['name'])){
     echo $e;
   }
 }
-
+header('Location: usrCurio.php');
 ?>

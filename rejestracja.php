@@ -19,7 +19,7 @@
       $ok = false;
       $_SESSION['password_err'] = "Hasla nie są takie same";
     }
-    if(strlen($password1) < 5){
+    if(strlen($password1) < 8){
       $ok = false;
       $_SESSION['password_err'] = "Haslo musi miec wiecej niz 5 znakow";
     }

@@ -25,7 +25,6 @@
           $_SESSION['dane'] = $tab;
           $_SESSION['size'] = 1;
           $_SESSION['exist'] = true;
-          header('Location: index.php');
         }
       $polaczenie->close();
     }
@@ -33,4 +32,5 @@
     echo "Błąd serwera";
     echo $e;
   }
+  header('Location: index.php');
 ?>
