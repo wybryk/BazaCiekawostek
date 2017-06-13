@@ -42,10 +42,10 @@
 	      <h1>Załóż konto</h1>
       </div>
       <div id="form-logIn">
-          <form action="rejestracja.php" method="post"/>
+          <form action="obslugaBazy/rejestracja.php" method="post"/>
               <div class="form-item">
-    		        <label>Login </label>
-    		        <input type="text" name="userlogin" value="<?php
+    		        <label>E-mail </label>
+    		        <input type="email" name="userlogin" value="<?php
                   if(isset($_SESSION['zk_login'])){
                     echo $_SESSION['zk_login'];
                     unset($_SESSION['zk_login']);

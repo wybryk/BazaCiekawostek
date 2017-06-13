@@ -28,5 +28,5 @@
     echo "Błąd serwera";
     echo $e;
   }
-    header('Location: usrCurio.php');
+    header('Location: /BazaCiekawostek/usrCurio.php');
   ?>

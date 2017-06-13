@@ -9,36 +9,8 @@
   $_SESSION['name'] = $_GET['nazwa'];
   $_SESSION['description'] = $_GET['opis'];
   $_SESSION['id_curio'] = $id_curio;
-  require_once "connect.php";
-    try{
-      $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
-      if($polaczenie->connect_errno != 0)
-        throw new Exception(mysqli_connect_errno());
-      else{
-        $polaczenie->query("SET NAMES 'utf8' COLLATE 'utf8_polish_ci'");
-        $polaczenie->query("SET CHARSET utf8");
-        $result = $polaczenie->query("SELECT * FROM kategoria");
-        if(!$result)
-          throw new Exception($polaczenie->error);
-        $row = $result->num_rows;
-        if($row > 0){
-          for ($i=0; $i<$row; $i++){
-            foreach ($result->fetch_assoc() as $value) {
-              $tab[$i][] = $value;
-            }
-          }
-          $_SESSION['dane'] = $tab;
-          $_SESSION['size'] = $row;
-        }
-        $result->free_result();
-        $polaczenie->close();
-      }
-    }catch(Exception $e){
-      echo "Błąd serwera";
-      echo $e;
-    }
-
-  ?>
+  require_once("obslugaBazy/selectKategorie.php");
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -66,7 +38,7 @@
         <ul>
           <li><a href="usrView.php">Moje konto</a></li>
           <li><a href="usrCurio.php">Moje ciekawostki</a></li>
-          <li><a href="logOut.php">Wyloguj</a></li>
+          <li><a href="obslugaBazy/logOut.php">Wyloguj</a></li>
         </ul>
       </nav>
 	  </div>
@@ -83,7 +55,7 @@
 	      <h1>Edytuj ciekawostkę</h1>
       </div>
       <div id="form-logIn">
-          <form action="editRecord.php" method="post"/>
+          <form action="obslugaBazy/editRecord.php" method="post"/>
               <div class="form-item">
     		        <label>Nazwa </label>
     		        <input type="text" name="name" value="<?php

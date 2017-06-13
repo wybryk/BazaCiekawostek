@@ -17,7 +17,7 @@
       }
       if(strlen($password1) < 8){
         $ok = false;
-        $_SESSION['password_err'] = "Haslo musi miec wiecej niz 5 znakow";
+        $_SESSION['password_err'] = "Haslo musi miec wiecej niz 8 znakow";
       }
       if(ctype_alnum($password1) == false){
         $ok = false;
@@ -69,6 +69,6 @@
       }
     }
 
-  header('Location: usrView.php');
+  header('Location: /BazaCiekawostek/usrView.php');
 
 ?>

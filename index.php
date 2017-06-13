@@ -34,7 +34,7 @@
               if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true){
                 echo '<li><a href="usrView.php">Moje konto</a></li>';
                 echo '<li><a href="usrCurio.php">Moje ciekawostki</a></li>';
-                echo '<li><a href="logOut.php">Wyloguj</a></li>';
+                echo '<li><a href="obslugaBazy/logOut.php">Wyloguj</a></li>';
               }
               else{
                 echo '<li><a href="signUp.php">Załóż konto</a></li>';
@@ -46,11 +46,11 @@
 	</div>
   <div id="main">
     <div id="search-box">
-      <form action="selectCurio.php" method="post" id="name-form">
+      <form action="obslugaBazy/selectCurio.php" method="post" id="name-form">
         <input type="text" id="search-docs" name="name" />
         <button type="submit" class="buton" >Szukaj</button>
       </form>
-      <form action="randomRecord.php" method="post" id="random-form">
+      <form action="obslugaBazy/randomRecord.php" method="post" id="random-form">
         <button type="submit" class="buton" >Losowe</button>
       </form>
       <form style="clear: both"></form>

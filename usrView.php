@@ -33,12 +33,12 @@
           <ul>
       			<li><a href="usrView.php">Moje konto</a></li>
             <li><a href="usrCurio.php">Moje ciekawostki</a></li>
-            <li><a href="logOut.php">Wyloguj</a></li>
+            <li><a href="obslugaBazy/logOut.php">Wyloguj</a></li>
           </ul>
         </nav>
 	</div>
   <div id="main">
-    <div id="registration">
+    <div id="info">
     <?php
       if(isset($_SESSION['registration'])){
         echo $_SESSION['registration'];
@@ -50,13 +50,9 @@
       <h1>Edytuj dane konta</h1>
     </div>
     <div id="form-logIn">
-        <form action="editLogin.php" method="post"/>
+        <form action="obslugaBazy/editLogin.php" method="post"/>
           <div class="form-item">
-            <label>Login:
-              <?php
-              echo $_SESSION['login'];
-              ?>
-            </label>
+            <label>Login:</label>
             <button class="submit">
               <?php
               if(isset($_SESSION['login_edit']) && $_SESSION['login_edit'] == true)
@@ -68,12 +64,12 @@
           </div>
         </form>
 
-        <form action="editLogin.php" method="post"/>
+        <form action="obslugaBazy/editLogin.php" method="post"/>
             <div class="form-login-edit">
             <?php
             if( isset($_SESSION['login_edit']) && $_SESSION['login_edit'] == true ){
                 echo "<label>Nowy login </label>";
-                echo "<input type='text' name='userlogin' autofocus='true'/>";
+                echo "<input type='email' name='userlogin' autofocus='true'/>";
             ?>
             </div>
             <div class="error">
@@ -89,12 +85,8 @@
             }
             ?>
         </form>
-        <form action="editPassword.php" method="post"/>
-        <label>Hasło:
-          <?php
-          echo $_SESSION['password'];
-          ?>
-        </label>
+        <form action="obslugaBazy/editPassword.php" method="post"/>
+        <label>Hasło:</label>
           <div class="form-item">
             <button class="submit">
               <?php
@@ -106,7 +98,7 @@
               </button>
           </div>
         </form>
-        <form action="editPassword.php" method="post"/>
+        <form action="obslugaBazy/editPassword.php" method="post"/>
           <div class="form-password-edit">
             <?php
             if( isset($_SESSION['password_edit']) && $_SESSION['password_edit'] == true ){

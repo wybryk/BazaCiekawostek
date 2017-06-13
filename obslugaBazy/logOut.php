@@ -4,6 +4,6 @@
 
   session_unset();
 
-  header('Location: logIn.php');
+  header('Location: /BazaCiekawostek/logIn.php');
 
 ?>

@@ -32,5 +32,5 @@ if(isset($_POST['name'])){
     echo $e;
   }
 }
-header('Location: usrCurio.php');
+header('Location: /BazaCiekawostek/usrCurio.php');
 ?>

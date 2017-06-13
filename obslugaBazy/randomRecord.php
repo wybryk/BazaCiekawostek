@@ -32,5 +32,5 @@
     echo "Błąd serwera";
     echo $e;
   }
-  header('Location: index.php');
+  header('Location: /BazaCiekawostek/index.php');
 ?>

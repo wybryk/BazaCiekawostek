@@ -54,5 +54,5 @@
     }
   }
 
-  header('Location: addCurio.php');
+  header('Location: /BazaCiekawostek/addCurio.php');
 ?>

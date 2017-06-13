@@ -9,13 +9,11 @@
       $ok = true;
       $login = $_POST['userlogin'];
       $id = $_SESSION['id'];
-      if(strlen($login) < 5 || strlen($login) > 20){
+      $email = filter_var($login, FILTER_SANITIZE_EMAIL);
+
+      if( (filter_var($email, FILTER_SANITIZE_EMAIL) == false) || ($login!=$email)){
         $ok = false;
-        $_SESSION['login_err'] = "Login musi posiadać od 5 do 20 znakow";
-      }
-      if(ctype_alnum($login) == false){
-        $ok = false;
-        $_SESSION['login_err'] = "Login musi składać się tylko z cyfr i liter(bez polskich znaków)";
+        $_SESSION['login_err'] = "Podaj poprawny adres e-mail";
       }
 
       require_once "connect.php";
@@ -25,14 +23,14 @@
         if($polaczenie->connect_errno != 0)
           throw new Exception(mysqli_connect_errno());
         else{
-          $result = $polaczenie->query("SELECT id FROM KONTO WHERE login = '$login'");
+          $result = $polaczenie->query("SELECT id FROM KONTO WHERE login = '$email'");
           if(!$result)
             throw new Exception($polaczenie->error);
           $ilu_usr = $result->num_rows;
           if($ilu_usr > 0){
             $ok = false;
             $_SESSION['login_err'] = "Istnieje już konto z takim loginem";
-
+          }
           if($ok == true){
             if($polaczenie->query("UPDATE konto SET login = '$login' WHERE id = '$id'")){
               $_SESSION['registration'] = "Zmieniono login.";
@@ -44,7 +42,7 @@
             else
               throw new Exception($polaczenie->error);
           }
-        }
+
         $_SESSION['login_edit'] = true;
         $polaczenie->close();
       }
@@ -55,6 +53,6 @@
     }
 
 
-  header('Location: usrView.php');
+  header('Location: /BazaCiekawostek/usrView.php');
 
 ?>

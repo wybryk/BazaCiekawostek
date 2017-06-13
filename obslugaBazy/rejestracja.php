@@ -7,13 +7,11 @@
     $login = $_POST['userlogin'];
     $password1 = $_POST['userpassword1'];
     $password2 = $_POST['userpassword2'];
-    if(strlen($login) < 5 || strlen($login) > 20){
+    $email = filter_var($login, FILTER_SANITIZE_EMAIL);
+
+    if( (filter_var($email, FILTER_SANITIZE_EMAIL) == false) || ($login!=$email)){
       $ok = false;
-      $_SESSION['login_err'] = "Login musi posiadać od 5 do 20 znakow";
-    }
-    if(ctype_alnum($login) == false){
-      $ok = false;
-      $_SESSION['login_err'] = "Login musi składać się tylko z cyfr i liter(bez polskich znaków)";
+      $_SESSION['login_err'] = "Podaj poprawny adres e-mail";
     }
     if($password1!=$password2){
       $ok = false;
@@ -73,5 +71,5 @@
       echo $e;
     }
   }
-  header('Location: signUp.php');
+  header('Location: /BazaCiekawostek/signUp.php');
  ?>

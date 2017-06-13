@@ -33,7 +33,7 @@
           <ul>
       			<li><a href="usrView.php">Moje konto</a></li>
             <li><a href="usrCurio.php">Moje ciekawostki</a></li>
-            <li><a href="logOut.php">Wyloguj</a></li>
+            <li><a href="obslugaBazy/logOut.php">Wyloguj</a></li>
           </ul>
         </nav>
 	</div>
@@ -47,11 +47,11 @@
      ?>
    </div>
     <div id="search-box">
-      <form action="selectUserCurio.php" method="post" id="name-form" style="width: 80%;">
+      <form action="obslugaBazy/selectUserCurio.php" method="post" id="name-form" style="width: 80%;">
         <input type="text" id="search-docs" name="name" />
         <button type="submit" class="buton" >Szukaj</button>
       </form>
-      <form action="selectAllUserCurio.php" method="post" id="random-form">
+      <form action="obslugaBazy/selectAllUserCurio.php" method="post" id="random-form">
         <button type="submit" class="buton" >Pokaż wszystkie</button>
       </form>
       <form style="clear: both"></form>
@@ -65,7 +65,7 @@
           for($i=0; $i<$_SESSION['size']; $i++)
             echo "<tr><th>{$tab_dane[$i][1]}</th>
               <td ><a href='editCurio.php?id={$tab_dane[$i][0]}&nazwa={$tab_dane[$i][1]}&opis={$tab_dane[$i][2]}'>Edytuj</a></td></tr>
-              <tr><td>{$tab_dane[$i][2]}</td><td><a href='deleteRecord.php?id={$tab_dane[$i][0]}'>Usuń</a></td></tr>";
+              <tr><td>{$tab_dane[$i][2]}</td><td><a href='obslugaBazy/deleteRecord.php?id={$tab_dane[$i][0]}'>Usuń</a></td></tr>";
             unset($_SESSION['dane']);
             $_SESSION['exist'] = false;
         }
