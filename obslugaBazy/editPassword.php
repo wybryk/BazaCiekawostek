@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['zalogowany'])){
-    header('Location: /BazaCiekawostek/logIn.php');
+    header('Location: ../logIn.php');
     exit();
   }
   if($_SESSION['password_edit'] == false)
@@ -73,6 +73,6 @@
       }
     }
 
-  header('Location: /BazaCiekawostek/usrView.php');
+  header('Location: ../usrView.php');
 
 ?>

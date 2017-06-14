@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['zalogowany'])){
-    header('Location: /BazaCiekawostek/logIn.php');
+    header('Location: ../logIn.php');
     exit();
   }
 
@@ -23,5 +23,5 @@
     echo "Błąd serwera";
     echo $e;
   }
-  header('Location: /BazaCiekawostek/usrCurio.php');
+  header('Location: ../usrCurio.php');
 ?>

@@ -3,7 +3,7 @@
   session_start();
 
   if(!isset($_POST['login']) || !isset($_POST['password'])){
-    header('Location: /BazaCiekawosteklogIn.php');
+    header('Location: ../logIn.php');
     exit();
   }
 
@@ -34,16 +34,16 @@
 
             unset($_SESSION['blad']);
             $result->free_result();
-            header('Location: /BazaCiekawostek/index.php');
+            header('Location: ../index.php');
           }
           else{
             $_SESSION['blad'] = '<span style="color:red">Nieprawidlowy login lub haslo</span>';
-            header('Location: /BazaCiekawostek/logIn.php');
+            header('Location: ../logIn.php');
           }
         }
         else{
           $_SESSION['blad'] = '<span style="color:red">Nieprawidlowy login lub haslo</span>';
-          header('Location: /BazaCiekawostek/logIn.php');
+          header('Location: ../logIn.php');
         }
       }
         $polaczenie->close();

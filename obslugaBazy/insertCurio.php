@@ -2,7 +2,7 @@
 
   session_start();
   if(!isset($_SESSION['zalogowany'])){
-    header('Location: /BazaCiekawostek/logIn.php');
+    header('Location: ../logIn.php');
     exit();
   }
   if(isset($_POST['name'])){
@@ -57,5 +57,5 @@
     }
   }
 
-  header('Location: /BazaCiekawostek/addCurio.php');
+  header('Location: ../addCurio.php');
 ?>

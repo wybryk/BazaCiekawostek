@@ -71,5 +71,5 @@
       echo $e;
     }
   }
-  header('Location: /BazaCiekawostek/signUp.php');
+  header('Location: ../signUp.php');
  ?>
