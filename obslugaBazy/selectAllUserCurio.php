@@ -1,5 +1,9 @@
 <?php
   session_start();
+  if(!isset($_SESSION['zalogowany'])){
+    header('Location: /BazaCiekawostek/logIn.php');
+    exit();
+  }
   $_SESSION['exist'] = false;
     require_once "connect.php";
     try{

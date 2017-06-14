@@ -39,7 +39,7 @@
           <form action="obslugaBazy/zaloguj.php" data-component="validate" method="post" class="form form-centered"><input type="hidden" name="authorize-token" value="753e9d4322451c61e53907e6900039d545b152009c708e53e9cf65b50060e09a9008fb64fc49899cca72d08dc668ac1c553ca47677efa8a967fa2023aa78a8b1" />
               <div class="form-item">
 		            <label>Login <span id="user-login-validation-error"></span></label>
-		              <input type="text" name="login" autofocus="true" />
+		              <input type="email" name="login" autofocus="true" />
 	            </div>
 	            <div class="form-item">
 		             <label>Haslo <span id="user-password-validation-error"></span></label>

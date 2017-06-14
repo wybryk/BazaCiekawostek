@@ -1,7 +1,10 @@
 <?php
 
   session_start();
-
+  if(!isset($_SESSION['zalogowany'])){
+    header('Location: /BazaCiekawostek/logIn.php');
+    exit();
+  }
   if(isset($_POST['name'])){
     $ok = true;
     $name = $_POST['name'];

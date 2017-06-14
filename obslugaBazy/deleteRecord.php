@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['zalogowany'])){
-    header('Location: logIn.php');
+    header('Location: /BazaCiekawostek/logIn.php');
     exit();
   }
 

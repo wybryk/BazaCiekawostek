@@ -1,5 +1,9 @@
 <?php
   session_start();
+  if(!isset($_SESSION['zalogowany'])){
+    header('Location: /BazaCiekawostek/logIn.php');
+    exit();
+  }
   if($_SESSION['login_edit'] == false)
     $_SESSION['login_edit'] = true;
   else

@@ -1,5 +1,9 @@
 <?php
   session_start();
+  if(!isset($_SESSION['zalogowany'])){
+    header('Location: logIn.php');
+    exit();
+  }
   require_once("obslugaBazy/selectKategorie.php");
 ?>
 
